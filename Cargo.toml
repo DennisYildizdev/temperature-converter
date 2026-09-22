@@ -1,0 +1,10 @@
+[package]
+name = "temperature-converter"
+version = "0.1.0"
+edition = "2024"
+description = "A simple Celsius and Fahrenheit command-line converter"
+license = "MIT"
+repository = "https://github.com/DennisYildizdev/temperature-converter"
+readme = "README.md"
+
+[dependencies]

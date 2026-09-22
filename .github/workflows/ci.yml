@@ -1,0 +1,20 @@
+name: Rust checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare Rust
+        run: rustup update stable --no-self-update && rustup default stable && rustup component add clippy
+      - name: Test
+        run: cargo test --locked
+      - name: Clippy
+        run: cargo clippy --locked -- -D warnings
